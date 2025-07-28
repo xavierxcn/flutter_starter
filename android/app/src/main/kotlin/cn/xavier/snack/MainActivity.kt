@@ -1,4 +1,4 @@
-package com.example.flutter_starter
+package cn.xavier.snack
 
 import io.flutter.embedding.android.FlutterActivity
 

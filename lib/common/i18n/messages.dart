@@ -7,7 +7,7 @@ class Messages extends Translations {
     // 中文简体
     'zh_CN': {
       // 通用
-      'app_name': 'Flutter Starter',
+      'app_name': 'flutter_starter',
       'confirm': '确认',
       'cancel': '取消',
       'ok': '好的',

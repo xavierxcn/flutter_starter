@@ -16,6 +16,8 @@
 - 🎯 **最小示例**: 精简的脚手架结构，快速上手
 - ↩️ **操作撤回**: 支持撤回错误的生成操作，避免手动清理
 - 🌐 **国际化支持**: 完整的i18n解决方案，支持多语言切换
+- ⚙️ **项目配置**: 一键修改应用名称、包名和图标
+- 📋 **项目克隆**: 快速创建干净的项目副本
 
 ## 📂 项目结构
 
@@ -59,6 +61,9 @@ scripts/                 # 代码生成脚本
 ├── history_manager.dart # 历史记录管理器
 ├── i18n_manager.dart   # 翻译管理脚本
 ├── add_translation.dart # 添加翻译脚本
+├── configure_project.dart # 项目配置脚本
+├── quick_setup.dart    # 快速设置脚本
+├── clone_project.dart  # 项目克隆脚本
 └── demo.dart           # 演示脚本
 
 templates/               # 代码模板
@@ -72,26 +77,7 @@ templates/               # 代码模板
     └── api.dart.template
 ```
 
-## 🚀 快速开始
 
-### 1. 克隆项目
-
-```bash
-git clone <your-repo-url>
-cd flutter_starter
-```
-
-### 2. 安装依赖
-
-```bash
-flutter pub get
-```
-
-### 3. 运行项目
-
-```bash
-flutter run
-```
 
 ## 🛠️ 代码生成工具
 
@@ -160,6 +146,21 @@ dart run scripts/revert.dart <operation_id>
 dart run scripts/revert.dart --clear
 ```
 
+### 项目配置
+
+快速配置新项目：
+
+```bash
+# 交互式配置项目信息
+dart run scripts/configure_project.dart
+
+# 快速设置（非交互式）
+dart run scripts/quick_setup.dart --name="应用名称" --package="com.company.app" --description="应用描述" --icon="icon.png"
+
+# 克隆项目到新目录
+dart run scripts/clone_project.dart my_new_project
+```
+
 ### 国际化管理
 
 管理多语言翻译：
@@ -189,7 +190,85 @@ dart run scripts/i18n_manager.dart --export
 dart run scripts/demo.dart
 ```
 
+## 🚀 快速开始
+
+### 方式一：直接使用（开发/学习）
+
+1. **克隆项目**
+   ```bash
+   git clone <repository-url>
+   cd flutter_starter
+   ```
+
+2. **安装依赖**
+   ```bash
+   flutter pub get
+   ```
+
+3. **运行项目**
+   ```bash
+   flutter run
+   ```
+
+### 方式二：创建新项目（推荐）
+
+1. **克隆脚手架**
+   ```bash
+   git clone <repository-url>
+   cd flutter_starter
+   ```
+
+2. **克隆项目副本**
+   ```bash
+   dart run scripts/clone_project.dart my_new_app
+   cd my_new_app
+   ```
+
+3. **配置项目信息**
+   ```bash
+   # 交互式配置
+   dart run scripts/configure_project.dart
+   
+   # 或快速设置
+   dart run scripts/quick_setup.dart --name="我的应用" --package="com.mycompany.myapp"
+   ```
+
+4. **安装依赖并运行**
+   ```bash
+   flutter pub get
+   flutter run
+   ```
+
 ## 📝 使用指南
+
+### 新项目开发流程
+
+1. **创建项目副本**
+   ```bash
+   dart run scripts/clone_project.dart my_app
+   cd my_app
+   ```
+
+2. **配置项目信息**
+   ```bash
+   dart run scripts/quick_setup.dart --name="我的应用" --package="com.example.myapp"
+   ```
+
+3. **开始开发**
+   ```bash
+   flutter pub get
+   dart run scripts/generate_page.dart home
+   flutter run
+   ```
+
+### 项目配置选项
+
+配置脚本支持以下选项：
+
+- **应用名称**: 显示在设备上的应用名称
+- **包名**: 应用的唯一标识符（如：com.company.app）
+- **描述**: 应用描述信息
+- **图标**: 应用图标文件路径（自动生成多尺寸图标）
 
 ### 页面开发
 

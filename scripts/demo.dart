@@ -75,6 +75,14 @@ void _showGenerators() {
   print('5. 🌐 国际化管理器');
   print('   dart run scripts/i18n_manager.dart --check');
   print('   → 检查和管理多语言翻译');
+  print('');
+  print('6. ⚙️  项目配置器');
+  print('   dart run scripts/configure_project.dart');
+  print('   → 配置应用名称、包名和图标');
+  print('');
+  print('7. 📋 项目克隆器');
+  print('   dart run scripts/clone_project.dart my_app');
+  print('   → 创建干净的项目副本');
 }
 
 /// 显示使用示例
@@ -101,6 +109,14 @@ void _showExamples() {
   print('   dart run scripts/add_translation.dart "new_key" "中文" "English"');
   print('');
 
+  print('🔹 配置新项目:');
+  print('   dart run scripts/clone_project.dart my_app');
+  print('   dart run scripts/configure_project.dart');
+  print(
+    '   dart run scripts/quick_setup.dart --name="应用" --package="com.company.app"',
+  );
+  print('');
+
   print('🔹 页面导航示例:');
   print('   Get.toNamed(RouteNames.userManagement);');
   print('');
@@ -122,4 +138,6 @@ void _showFeatures() {
   print('✅ 模板分离设计 - 易于自定义模板');
   print('✅ 最小化脚手架 - 快速上手开发');
   print('✅ 国际化支持 - 完整的多语言方案');
+  print('✅ 项目配置工具 - 一键修改应用信息');
+  print('✅ 项目克隆功能 - 快速创建新项目');
 }
