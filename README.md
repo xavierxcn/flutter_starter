@@ -503,8 +503,8 @@ git commit -m "docs: 更新README文档"
 
 如果你在使用过程中遇到问题，请通过以下方式反馈：
 
-- 提交 [Issue](https://github.com/your-username/flutter_starter/issues)
-- 发送邮件到 your-email@example.com
+- 提交 [Issue](https://github.com/xavierxcn/flutter_starter/issues)
+- 发送邮件到 xavier@xavierx.cn
 
 ---
 
