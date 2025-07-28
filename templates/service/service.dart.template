@@ -1,0 +1,66 @@
+import 'package:get/get.dart';
+
+import '../api/index.dart';
+import '../models/index.dart';
+
+/// {{className}}
+class {{className}} extends GetxService {
+  static {{className}} get to => Get.find();
+
+  final {{apiName}} _api = {{apiName}}();
+
+  /// 获取数据列表
+  Future<List<{{modelName}}>> getList() async {
+    try {
+      final response = await _api.getList();
+      return response.data?.map<{{modelName}}>((json) => {{modelName}}.fromJson(json)).toList() ?? [];
+    } catch (e) {
+      print('获取数据列表失败: $e');
+      return [];
+    }
+  }
+
+  /// 根据ID获取数据
+  Future<{{modelName}}?> getById(String id) async {
+    try {
+      final response = await _api.getById(id);
+      return response.data != null ? {{modelName}}.fromJson(response.data!) : null;
+    } catch (e) {
+      print('获取数据失败: $e');
+      return null;
+    }
+  }
+
+  /// 创建数据
+  Future<bool> create({{modelName}} model) async {
+    try {
+      final response = await _api.create(model.toJson());
+      return response.statusCode == 200;
+    } catch (e) {
+      print('创建数据失败: $e');
+      return false;
+    }
+  }
+
+  /// 更新数据
+  Future<bool> update(String id, {{modelName}} model) async {
+    try {
+      final response = await _api.update(id, model.toJson());
+      return response.statusCode == 200;
+    } catch (e) {
+      print('更新数据失败: $e');
+      return false;
+    }
+  }
+
+  /// 删除数据
+  Future<bool> delete(String id) async {
+    try {
+      final response = await _api.delete(id);
+      return response.statusCode == 200;
+    } catch (e) {
+      print('删除数据失败: $e');
+      return false;
+    }
+  }
+} 

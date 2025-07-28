@@ -1,0 +1,22 @@
+import 'package:get/get.dart';
+
+/// {{className}}控制器
+class {{controllerName}} extends GetxController {
+  {{controllerName}}();
+
+  /// 初始化数据
+  void _initData() {
+    update(["{{pageName}}"]);
+  }
+
+  /// 点击事件
+  void onTap() {
+    // TODO: 实现点击逻辑
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    _initData();
+  }
+} 

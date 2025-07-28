@@ -1,0 +1,44 @@
+import 'package:dio/dio.dart';
+
+import '../services/index.dart';
+
+/// {{apiName}}接口
+class {{apiName}} {
+  final HttpService _httpService = HttpService.to;
+
+  /// 获取数据列表
+  Future<Response> getList({
+    int page = 1,
+    int limit = 20,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _httpService.get(
+      '/api/{{kebabName}}',
+      queryParameters: {
+        'page': page,
+        'limit': limit,
+        ...?query,
+      },
+    );
+  }
+
+  /// 根据ID获取数据
+  Future<Response> getById(String id) async {
+    return await _httpService.get('/api/{{kebabName}}/$id');
+  }
+
+  /// 创建数据
+  Future<Response> create(Map<String, dynamic> data) async {
+    return await _httpService.post('/api/{{kebabName}}', data: data);
+  }
+
+  /// 更新数据
+  Future<Response> update(String id, Map<String, dynamic> data) async {
+    return await _httpService.put('/api/{{kebabName}}/$id', data: data);
+  }
+
+  /// 删除数据
+  Future<Response> delete(String id) async {
+    return await _httpService.delete('/api/{{kebabName}}/$id');
+  }
+} 
